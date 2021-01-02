@@ -8,6 +8,7 @@ import {
   StatsWrapper,
   TodosWrapper,
 } from "./styles/TodoListStyles";
+import FilterList from "../filters/FilterList";
 
 const TodoList = () => {
   const allTodos = useSelector(selectFilteredTodoById);
@@ -25,7 +26,7 @@ const TodoList = () => {
           <ul>{renderedTodos}</ul>
         </TodosWrapper>
         <StatsWrapper>
-          <TodoStats />
+          <FilterList />
         </StatsWrapper>
       </MainWrapper>
     </>

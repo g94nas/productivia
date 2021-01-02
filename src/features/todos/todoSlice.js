@@ -4,7 +4,7 @@ import {
   createSelector,
 } from "@reduxjs/toolkit";
 
-import { FilterStatus } from "../filterSlice";
+import { FilterStatus } from "../filters/filterSlice";
 
 const todosAdapter = createEntityAdapter();
 

@@ -10,7 +10,6 @@ export const StatsWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex: 0.25;
-  margin-top: -2.2rem;
 `;
 
 export const TodosWrapper = styled.div`

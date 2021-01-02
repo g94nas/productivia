@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "../../src/features/userSlice";
-import filterReducer from "../../src/features/filterSlice";
+import filterReducer from "../../src/features/filters/filterSlice";
 import todoReducer from "../features/todos/todoSlice";
 
 export default configureStore({
