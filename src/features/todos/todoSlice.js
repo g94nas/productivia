@@ -23,7 +23,7 @@ const todosSlice = createSlice({
       const todo = state.entities[todoId];
       todo.completed = !todo.completed;
     },
-    editTodo: todosAdapter.updateOne,
+    editTodo: todosAdapter.upsertOne,
   },
 });
 

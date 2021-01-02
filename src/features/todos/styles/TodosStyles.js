@@ -18,6 +18,18 @@ export const SecondWrapper = styled.div`
     backgroundColor ? "rgba(130, 253, 99, 0.24)" : "none"};
 `;
 
+export const TextArea = styled.textarea`
+  display: flex;
+  flex-direction: row;
+  width: 700px;
+  height: 35px;
+  border: 2px solid #f5d432;
+  font-family: "Poppins";
+  padding: 5px;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+`;
+
 export const CheckedIcon = styled.div`
   display: flex;
   flex: 0;
@@ -50,5 +62,19 @@ export const RemoveIcon = styled.div`
 
   &:hover {
     color: #d93d3d;
+  }
+`;
+
+export const EditIcon = styled.div`
+  display: flex;
+  flex: 0;
+  padding-right: 0.5rem;
+  justify-self: flex-end;
+  align-self: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  &:hover {
+    color: #f5d432;
   }
 `;
