@@ -2,6 +2,12 @@ import React from "react";
 import Todos from "./Todos";
 import { selectFilteredTodoById } from "./todoSlice";
 import { useSelector } from "react-redux";
+import TodoStats from "./TodoStats";
+import {
+  MainWrapper,
+  StatsWrapper,
+  TodosWrapper,
+} from "./styles/TodoListStyles";
 
 const TodoList = () => {
   const allTodos = useSelector(selectFilteredTodoById);
@@ -9,7 +15,21 @@ const TodoList = () => {
     return <Todos id={todoId} key={todoId} />;
   });
 
-  return <ul>{renderedTodos}</ul>;
+  return (
+    <>
+      <MainWrapper>
+        <StatsWrapper>
+          <TodoStats />
+        </StatsWrapper>
+        <TodosWrapper>
+          <ul>{renderedTodos}</ul>
+        </TodosWrapper>
+        <StatsWrapper>
+          <TodoStats />
+        </StatsWrapper>
+      </MainWrapper>
+    </>
+  );
 };
 
 export default TodoList;
