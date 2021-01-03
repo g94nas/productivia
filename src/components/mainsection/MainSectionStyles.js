@@ -91,7 +91,10 @@ export const MainSectionImage = styled.img`
   }
 `;
 
-export const MainSectionButton = styled.button`
+export const MainSectionButton = styled(Link)`
+  text-decoration: none;
+  text-align: center;
+  color: #000;
   background-color: #f5d432;
   font-family: "Poppins";
   font-weight: bold;

@@ -42,10 +42,10 @@ const Header = () => {
         </MenuContainer>
         <ButtonContainer>
           <Button>
-            <ButtonLink to="/">Log in</ButtonLink>
+            <ButtonLink to="/signup">Log in</ButtonLink>
           </Button>
           <Button>
-            <ButtonLink to="/">Sign Up</ButtonLink>
+            <ButtonLink to="/signin">Sign Up</ButtonLink>
           </Button>
         </ButtonContainer>
       </NavWrapper>

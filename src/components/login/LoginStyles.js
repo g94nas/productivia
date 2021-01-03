@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import { Link } from "react-router-dom";
 
 export const MainWrapper = styled.div`
   display: flex;
@@ -45,9 +46,15 @@ export const SubText = styled.p`
   color: #fff;
 `;
 
-export const Span = styled.span`
+export const Span = styled(Link)`
+  cursor: pointer;
   font-size: 1rem;
   color: #f5d432;
+  text-decoration: none;
+
+  &:hover {
+    border-bottom: 1px solid #f5d432;
+  }
 `;
 
 export const Button = styled.button`

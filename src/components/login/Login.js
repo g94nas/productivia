@@ -52,7 +52,7 @@ const Login = () => {
         <Button onClick={handleSubmit}>Sign In</Button>
         <SubText>
           Not a member?
-          <Span> Register Now.</Span>
+          <Span to="/signup"> Register Now.</Span>
         </SubText>
       </Form>
     </MainWrapper>

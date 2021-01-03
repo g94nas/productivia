@@ -109,7 +109,11 @@ export const MainTitle = styled.h1`
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
+  text-decoration: none;
+  text-align: center;
+  color: #000;
+  width: 250px;
   display: block;
   margin: auto;
   background-color: #f5d432;
@@ -140,10 +144,14 @@ export const TitleScreen = styled.h1`
   }
 `;
 
-export const ButtonScreen = styled.button`
+export const ButtonScreen = styled(Link)`
   display: none;
 
   @media screen and (max-width: 768px) {
+    text-decoration: none;
+    text-align: center;
+    color: #000;
+    width: 250px;
     display: block;
     margin: auto;
     background-color: #f5d432;

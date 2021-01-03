@@ -73,7 +73,9 @@ const Signup = () => {
           value={password}
           onChange={handlePassword}
         ></Input>
-        <Button onClick={register}>Sign Up</Button>
+        <Button to="/todos" onClick={register}>
+          Sign Up
+        </Button>
       </Form>
     </MainWrapper>
   );

@@ -36,7 +36,7 @@ const MainSection = ({
         <MainSectionSubtitle maxWidthSubtitle={maxWidthSubtitle}>
           {subtitle}
         </MainSectionSubtitle>
-        <MainSectionButton>{buttonText}</MainSectionButton>
+        <MainSectionButton to="/signup">{buttonText}</MainSectionButton>
       </MainSectionPane>
       <MainSectionPane>
         <MainSectionImage src={img}></MainSectionImage>

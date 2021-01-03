@@ -5,7 +5,9 @@ import { List, Button, Title, MainWrapper } from "./styles/FiltersStyle";
 const Filters = ({ value, onChange }) => {
   const FilteredTodos = Object.keys(FilterStatus).map((key) => {
     const value = FilterStatus[key];
-    const handleClick = () => onChange(value);
+    const handleClick = () => {
+      onChange(value);
+    };
 
     return (
       <List key={value}>

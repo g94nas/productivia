@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import { Link } from "react-router-dom";
 
 export const MainWrapper = styled.div`
   display: flex;
@@ -38,7 +39,9 @@ export const Input = styled.input`
   font-family: "Poppins";
 `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
+  text-decoration: none;
+  text-align: center;
   display: block;
   margin: auto;
   width: 250px;
@@ -50,5 +53,11 @@ export const Button = styled.button`
   outline: none;
   font-weight: bold;
   margin-top: 2.5rem;
+  text-align: center;
+  line-height: 1.9;
   cursor: pointer;
+
+  &:hover {
+    width: 275px;
+  }
 `;

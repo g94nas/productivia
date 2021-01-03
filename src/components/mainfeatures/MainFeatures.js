@@ -27,13 +27,13 @@ const MainFeatures = () => {
         <MainTitle>Features</MainTitle>
         <Image src={NotesImage}></Image>
         <ImageTitle>Flashcards</ImageTitle>
-        <Button>Let's Begin</Button>
+        <Button to="/signup">Let's Begin</Button>
       </Pane>
       <Pane>
         <PomodoroImage src={TimeImage}></PomodoroImage>
         <ImageTitle>Pomodoro</ImageTitle>
       </Pane>
-      <ButtonScreen>Let's Begin</ButtonScreen>
+      <ButtonScreen to="/signup">Let's Begin</ButtonScreen>
     </MainWrapper>
   );
 };
