@@ -44,6 +44,7 @@ function App() {
       ) : (
         <Router>
           <Switch>
+            <TodoPage />
             <Route path="/todos" component={TodoPage} exact />
           </Switch>
         </Router>

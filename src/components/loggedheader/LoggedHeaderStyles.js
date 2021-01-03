@@ -80,7 +80,7 @@ export const NavLink = styled(LinkS)`
   }
 
   &:hover {
-    border-bottom: 3px solid #f5d432;
+    border-bottom: 3px solid #000;
   }
 
   @media screen and (max-width: 960px) {
@@ -92,12 +92,19 @@ export const ButtonContainer = styled.div`
   display: flex;
   text-align: center;
   align-items: center;
+  padding-left: 6.3rem;
 `;
 
 export const Button = styled.nav`
   display: flex;
   align-items: center;
   padding: 0 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  &:hover {
+    border-bottom: 3px solid #000;
+  }
 `;
 
 export const ButtonLink = styled(Link)`
@@ -106,10 +113,6 @@ export const ButtonLink = styled(Link)`
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
-
-  &:hover {
-    border-bottom: 3px solid #f5d432;
-  }
 
   @media screen and (max-width: 768px) {
     font-size: 0.8rem;

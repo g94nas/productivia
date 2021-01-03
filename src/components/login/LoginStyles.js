@@ -6,35 +6,30 @@ export const MainWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #f5d432;
-  height: 100vh;
+  height: 90vh;
 `;
 
 export const Form = styled.form`
-  background-color: #000;
-  border-radius: 20px;
   width: 350px;
   height: 350px;
 `;
 
 export const MainText = styled.h1`
-  text-align: center;
-  font-size: 1.5rem;
-  color: #f5d432;
-  font-weight: bold;
+  text-align: start;
+  font-size: 1rem;
+  color: #000;
+  font-weight: 300;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
 `;
 
 export const Input = styled.input`
-  width: 250px;
+  width: 350px;
   display: block;
   margin: auto;
   padding: 0.3rem;
-  border: none;
+  border: 2px solid #f5d432;
   outline: none;
-  border-style: none;
-  border-radius: 20px;
   font-family: "Poppins";
 `;
 
@@ -42,17 +37,17 @@ export const SubText = styled.p`
   margin-top: 2rem;
   text-align: center;
   font-size: 1rem;
-  color: #fff;
+  color: #000;
 `;
 
 export const Span = styled(Link)`
   cursor: pointer;
   font-size: 1rem;
-  color: #f5d432;
+  color: #bca42f;
   text-decoration: none;
 
   &:hover {
-    border-bottom: 1px solid #f5d432;
+    border-bottom: 1px solid #bca42f;
   }
 `;
 
@@ -63,13 +58,12 @@ export const Button = styled(Link)`
   display: block;
   margin: auto;
   width: 250px;
-  border-radius: 20px;
   background-color: #f5d432;
   color: #000;
   height: 30px;
   border: none;
   outline: none;
-  font-weight: bold;
+  font-weight: 300;
   margin-top: 2.5rem;
   cursor: pointer;
 `;
