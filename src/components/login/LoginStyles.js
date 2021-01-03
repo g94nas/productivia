@@ -8,7 +8,6 @@ export const MainWrapper = styled.div`
   align-items: center;
   background: #f5d432;
   height: 100vh;
-  width: 100vw;
 `;
 
 export const Form = styled.form`
@@ -57,7 +56,10 @@ export const Span = styled(Link)`
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.9;
   display: block;
   margin: auto;
   width: 250px;

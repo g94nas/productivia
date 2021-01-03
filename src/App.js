@@ -33,14 +33,21 @@ function App() {
 
   return (
     <>
-      <Router>
-        <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path="/signin" component={SignInPage} exact />
-          <Route path="/signup" component={SignupPage} exact />
-          <Route path="/todos" component={TodoPage} exact />
-        </Switch>
-      </Router>
+      {!user ? (
+        <Router>
+          <Switch>
+            <Route path="/" component={Home} exact />
+            <Route path="/signin" component={SignInPage} exact />
+            <Route path="/signup" component={SignupPage} exact />
+          </Switch>
+        </Router>
+      ) : (
+        <Router>
+          <Switch>
+            <Route path="/todos" component={TodoPage} exact />
+          </Switch>
+        </Router>
+      )}
     </>
   );
 }

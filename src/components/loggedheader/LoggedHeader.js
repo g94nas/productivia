@@ -1,4 +1,6 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { logout } from "../../features/userSlice";
 import {
   MainNavWrapper,
   NavWrapper,
@@ -12,8 +14,16 @@ import {
   ButtonContainer,
 } from "./LoggedHeaderStyles";
 import { FaBars } from "react-icons/fa";
+import { auth } from "../../firebase";
 
 const LoggedHeader = () => {
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    auth.signOut();
+  };
+
   return (
     <MainNavWrapper>
       <NavWrapper>
@@ -42,7 +52,9 @@ const LoggedHeader = () => {
         </MenuContainer>
         <ButtonContainer>
           <Button>
-            <ButtonLink to="/">Log out</ButtonLink>
+            <ButtonLink to="/" onClick={handleLogout}>
+              Log out
+            </ButtonLink>
           </Button>
         </ButtonContainer>
       </NavWrapper>

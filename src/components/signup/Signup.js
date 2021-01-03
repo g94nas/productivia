@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { auth } from "../../firebase";
 import { useDispatch } from "react-redux";
 import { login } from "../../features/userSlice";
+import { useHistory } from "react-router-dom";
 
 import { MainWrapper, Form, MainText, Input, Button } from "./SignupStyles";
 
 const Signup = () => {
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -44,6 +46,7 @@ const Signup = () => {
                 displayName: username,
               })
             );
+            history.push("/todos");
           });
       })
       .catch((error) => alert(error));

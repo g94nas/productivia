@@ -8,7 +8,6 @@ export const MainWrapper = styled.div`
   align-items: center;
   background: #f5d432;
   height: 100vh;
-  width: 100vw;
 `;
 
 export const Form = styled.form`
