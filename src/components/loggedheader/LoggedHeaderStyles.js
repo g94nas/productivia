@@ -8,7 +8,7 @@ import { Link as LinkS } from "react-scroll";
 export const MainNavWrapper = styled.nav`
   display: flex;
   justify-content: center;
-  height: 4em;
+  height: 3em;
   align-items: center;
   position: sticky;
   z-index: 10;
@@ -26,7 +26,7 @@ export const NavWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 4em;
+  height: 3em;
   padding: 0rem 7.5rem 0 7.5rem;
   z-index: 1;
 
@@ -40,7 +40,9 @@ export const NavLogo = styled(Link)`
   font-weight: bold;
   justify-content: flex-start;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 1rem;
+  padding-left: 0.6rem;
+  padding-right: 5.5rem;
   text-decoration: none;
   align-self: center;
   color: #000;
@@ -64,17 +66,19 @@ export const MenuContainer = styled.ul`
 `;
 
 export const MenuItem = styled.li`
-  height: 4em;
+  height: 3em;
 `;
 
 export const NavLink = styled(LinkS)`
   color: #606161;
+  font-size: 0.8rem;
   display: flex;
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+  padding-top: 2.5px;
   &.active {
     border-bottom: 3px solid #f5d432;
   }
@@ -92,15 +96,15 @@ export const ButtonContainer = styled.div`
   display: flex;
   text-align: center;
   align-items: center;
-  padding-left: 6.3rem;
+  padding-left: 7.5rem;
 `;
 
 export const Button = styled.nav`
   display: flex;
   align-items: center;
   padding: 0 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
 
   &:hover {
     border-bottom: 3px solid #000;
@@ -110,9 +114,10 @@ export const Button = styled.nav`
 export const ButtonLink = styled(Link)`
   white-space: nowrap;
   color: #4a4a4a;
-  font-size: 16px;
+  font-size: 0.8rem;
   cursor: pointer;
   text-decoration: none;
+  padding-top: 2.5px;
 
   @media screen and (max-width: 768px) {
     font-size: 0.8rem;
