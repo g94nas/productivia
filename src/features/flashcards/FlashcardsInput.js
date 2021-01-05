@@ -9,7 +9,7 @@ import {
   Form,
   Input,
   Button,
-} from "./styles/FlashcardStyles";
+} from "./styles/FlashcardInputStyles";
 
 const FlashcardsInput = () => {
   const [front, setFront] = useState("");

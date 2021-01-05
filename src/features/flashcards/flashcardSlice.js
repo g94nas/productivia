@@ -12,7 +12,7 @@ const flashcardSlice = createSlice({
     removeFlashcard: flashcardAdapter.removeOne,
     editFlashcard: flashcardAdapter.upsertOne,
     completeFlashcard(state, action) {
-      const { flashcardId } = action.payload;
+      const flashcardId = action.payload;
       const flashcard = state.entities[flashcardId];
       flashcard.completed = !flashcard.completed;
     },

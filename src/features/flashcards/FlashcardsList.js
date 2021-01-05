@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Flashcards } from "./Flashcards";
+import Flashcards from "./Flashcards";
 import { selectFlashcards } from "./flashcardSlice";
+import { FlashcardWrapper, Title, Break } from "./styles/FlashcardsListStyles";
 
 const FlashcardsList = () => {
   const allFlashcards = useSelector(selectFlashcards);
@@ -9,7 +10,13 @@ const FlashcardsList = () => {
     return <Flashcards key={flashcard.id} id={flashcard.id} />;
   });
 
-  return <div>{renderedFlashcards}</div>;
+  return (
+    <>
+      <Title>Created Flashcards</Title>
+      <Break></Break>
+      <FlashcardWrapper>{renderedFlashcards}</FlashcardWrapper>;
+    </>
+  );
 };
 
 export default FlashcardsList;
