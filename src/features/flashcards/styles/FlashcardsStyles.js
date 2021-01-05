@@ -19,6 +19,10 @@ export const Card = styled.div`
   align-items: center;
   word-break: break-all;
   cursor: pointer;
+  &:hover {
+    color: gray;
+    transition: 0.5s;
+  }
 `;
 
 export const ContentWrapper = styled.div`
@@ -37,11 +41,6 @@ export const Front = styled.h1`
   text-align: center;
   margin: auto;
   padding: 0 1rem;
-
-  &:hover {
-    font-size: 2rem;
-    transition: 0.5s;
-  }
 `;
 
 export const IconWrapper = styled.div`

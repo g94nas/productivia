@@ -52,7 +52,7 @@ const FlashcardsInput = () => {
   return (
     <MainWrapper>
       <Title>FLASHCARDS</Title>
-      <Form>
+      <Form onSubmit={(e) => e.preventDefault()}>
         <Input
           required
           placeholder="Add front of the flashcard"
@@ -61,7 +61,7 @@ const FlashcardsInput = () => {
           onChange={handleFront}
         ></Input>
       </Form>
-      <Form>
+      <Form onSubmit={(e) => e.preventDefault()}>
         <Input
           required
           type="text"
@@ -70,7 +70,7 @@ const FlashcardsInput = () => {
           onChange={handleBack}
         ></Input>
       </Form>
-      <Form>
+      <Form onSubmit={(e) => e.preventDefault()}>
         <Input
           required
           placeholder="Add a group"

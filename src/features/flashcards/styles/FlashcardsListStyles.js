@@ -11,17 +11,17 @@ export const FlashcardWrapper = styled.div`
 
 export const Title = styled.h1`
   font-weight: 300;
-  font-size: 3rem;
-  padding-top: 3rem;
+  font-size: 2rem;
+  padding-top: 2rem;
   text-align: center;
 `;
 
 export const Break = styled.div`
   display: flex;
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 1rem;
   flex-direction: center;
-  width: 300px;
+  width: 500px;
   height: 2px;
   background-color: #f5d432;
   align-self: center;
