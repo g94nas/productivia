@@ -1,9 +1,15 @@
 import React from "react";
 import { useState } from "react";
-import { addOne } from "./flashcardSlice";
+import { addFlashcard } from "./flashcardSlice";
 import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
-import { MainWrapper, Title, Form, Input, Button } from "./FlashcardsStyles";
+import {
+  MainWrapper,
+  Title,
+  Form,
+  Input,
+  Button,
+} from "./styles/FlashcardStyles";
 
 const FlashcardsInput = () => {
   const [front, setFront] = useState("");
@@ -25,40 +31,55 @@ const FlashcardsInput = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(
-      addOne({
-        id: nanoid(),
-        front: front,
-        back: back,
-        group: group,
-        completed: false,
-      })
-    );
+    if (front && back && group) {
+      dispatch(
+        addFlashcard({
+          id: nanoid(),
+          front: front,
+          back: back,
+          group: group,
+          completed: false,
+        })
+      );
+      setFront("");
+      setBack("");
+      setGroup("");
+    } else {
+      alert("Please fill all three input fields");
+    }
   };
 
   return (
     <MainWrapper>
-      <Title>Flashcards</Title>
+      <Title>FLASHCARDS</Title>
       <Form>
         <Input
           required
+          placeholder="Add front of the flashcard"
           type="text"
           value={front}
           onChange={handleFront}
         ></Input>
       </Form>
       <Form>
-        <Input required type="text" value={back} onChange={handleBack}></Input>
+        <Input
+          required
+          type="text"
+          value={back}
+          placeholder="Add back of the flashcard"
+          onChange={handleBack}
+        ></Input>
       </Form>
       <Form>
         <Input
           required
+          placeholder="Add a group"
           type="text"
           value={group}
           onChange={handleGroup}
         ></Input>
       </Form>
-      <Button onSubmit={handleSubmit}>Submit Flashcard</Button>
+      <Button onClick={handleSubmit}>Submit Flashcard</Button>
     </MainWrapper>
   );
 };

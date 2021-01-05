@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { login, logout, selectUser } from "./features/userSlice";
 import { auth } from "./firebase";
 import Home from "./pages";
+import FlashcardPage from "./pages/FlashcardPage";
 import SignInPage from "./pages/SignInPage";
 import SignupPage from "./pages/SignupPage";
 import TodoPage from "./pages/TodoPage";
@@ -39,6 +40,8 @@ function App() {
             <Route path="/" component={Home} exact />
             <Route path="/signin" component={SignInPage} exact />
             <Route path="/signup" component={SignupPage} exact />
+            {/* REMOVE ONCE DONE */}
+            <Route path="/flashcards" component={FlashcardPage} exact />
           </Switch>
         </Router>
       ) : (
@@ -46,6 +49,7 @@ function App() {
           <Switch>
             <TodoPage />
             <Route path="/todos" component={TodoPage} exact />
+            <Route path="/flashcards" component={FlashcardPage} exact />
           </Switch>
         </Router>
       )}
