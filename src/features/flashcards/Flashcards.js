@@ -10,6 +10,7 @@ import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import { BsPencilSquare } from "react-icons/bs";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import FlashcardsModal from "./FlashcardsModal";
 import {
   MainWrapper,
   Card,
@@ -24,6 +25,7 @@ import {
 const Flashcards = ({ id }) => {
   const flashcard = useSelector((state) => selectFlashcardsById(state, id));
   const [editToggle, setEditToggle] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const dispatch = useDispatch();
 
@@ -36,30 +38,49 @@ const Flashcards = ({ id }) => {
     setIsCompleted(!isCompleted);
   };
 
+  const handleOpenModal = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <MainWrapper>
-      <ContentWrapper>
-        <Card
-          style={{
-            backgroundColor: isCompleted ? "#99ff99" : "transparent",
-            transition: "0.5s",
-          }}
-        >
-          <Front>{flashcard.front}</Front>
-        </Card>
-        <IconWrapper>
-          <EraseIcon onClick={handleDelete}>
-            <MdRemoveCircleOutline />
-          </EraseIcon>
-          <CompletedIcon onClick={handleComplete}>
-            <IoIosCheckmarkCircleOutline />
-          </CompletedIcon>
-          <EditIcon>
-            <BsPencilSquare />
-          </EditIcon>
-        </IconWrapper>
-      </ContentWrapper>
-    </MainWrapper>
+    <>
+      {isOpen ? (
+        <FlashcardsModal
+          front={flashcard.front}
+          back={flashcard.back}
+          id={flashcard.id}
+          completed={flashcard.completed}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          handleOpenModal={handleOpenModal}
+          handleComplete={handleComplete}
+        />
+      ) : (
+        <MainWrapper>
+          <ContentWrapper>
+            <Card
+              style={{
+                backgroundColor: isCompleted ? "#99ff99" : "transparent",
+                transition: "0.5s",
+              }}
+            >
+              <Front onClick={handleOpenModal}>{flashcard.front}</Front>
+            </Card>
+            <IconWrapper>
+              <EraseIcon onClick={handleDelete}>
+                <MdRemoveCircleOutline />
+              </EraseIcon>
+              <CompletedIcon onClick={handleComplete}>
+                <IoIosCheckmarkCircleOutline />
+              </CompletedIcon>
+              <EditIcon>
+                <BsPencilSquare />
+              </EditIcon>
+            </IconWrapper>
+          </ContentWrapper>
+        </MainWrapper>
+      )}
+    </>
   );
 };
 
