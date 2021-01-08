@@ -40,14 +40,12 @@ function App() {
             <Route path="/" component={Home} exact />
             <Route path="/signin" component={SignInPage} exact />
             <Route path="/signup" component={SignupPage} exact />
-            {/* REMOVE ONCE DONE */}
-            <Route path="/flashcards" component={FlashcardPage} exact />
           </Switch>
         </Router>
       ) : (
         <Router>
           <Switch>
-            <TodoPage />
+            <Route path="/" component={TodoPage} exact />
             <Route path="/todos" component={TodoPage} exact />
             <Route path="/flashcards" component={FlashcardPage} exact />
           </Switch>

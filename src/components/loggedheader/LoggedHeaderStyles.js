@@ -1,6 +1,5 @@
 import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
-import { Link as LinkS } from "react-scroll";
 
 //#F5D432
 //#4A4A4A
@@ -69,7 +68,7 @@ export const MenuItem = styled.li`
   height: 3em;
 `;
 
-export const NavLink = styled(LinkS)`
+export const NavLink = styled(Link)`
   color: #606161;
   font-size: 0.8rem;
   display: flex;
@@ -80,7 +79,7 @@ export const NavLink = styled(LinkS)`
   cursor: pointer;
   padding-top: 2.5px;
   &.active {
-    border-bottom: 3px solid #f5d432;
+    border-bottom: 3px solid #000;
   }
 
   &:hover {

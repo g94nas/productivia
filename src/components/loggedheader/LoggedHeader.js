@@ -27,27 +27,19 @@ const LoggedHeader = () => {
   return (
     <MainNavWrapper>
       <NavWrapper>
-        <NavLogo to="/" exact="true">
-          Productivia
-        </NavLogo>
+        <NavLogo to="/todos">Productivia</NavLogo>
         <SidebarIcon>
           <FaBars />
         </SidebarIcon>
         <MenuContainer>
           <MenuItem>
-            <NavLink to="home" exact="true" offset={-80}>
-              TodoList
-            </NavLink>
+            <NavLink to="/todos">TodoList</NavLink>
           </MenuItem>
           <MenuItem>
-            <NavLink to="#" exact="true">
-              Flashcards
-            </NavLink>
+            <NavLink to="/flashcards">Flashcards</NavLink>
           </MenuItem>
           <MenuItem>
-            <NavLink to="#" exact="true" offset={-80}>
-              Pomodoro
-            </NavLink>
+            <NavLink to="#">Pomodoro</NavLink>
           </MenuItem>
         </MenuContainer>
         <ButtonContainer>

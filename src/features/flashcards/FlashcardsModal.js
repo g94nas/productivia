@@ -25,7 +25,7 @@ const FlashcardsModal = ({
 }) => {
   const [showAnswer, setShowAnswer] = useState(false);
   const allFlashcards = useSelector(selectFlashcards);
-  const [currentIdx, setCurrentIdx] = useState(0);
+  const [currentIdx, setCurrentIdx] = useState(1);
   const [currentFlashcard, setCurrentFlashcard] = useState(id);
   const flashcard =
     useSelector((state) => selectFlashcardsById(state, currentFlashcard)) || "";
@@ -35,10 +35,11 @@ const FlashcardsModal = ({
       setCurrentIdx(currentIdx + 1);
       setCurrentFlashcard(allFlashcards[currentIdx].id);
       console.log(currentIdx);
-      console.log(currentFlashcard);
+      console.log("I performed a plus action");
     } else {
-      setCurrentIdx(0);
+      setCurrentIdx(1);
       setCurrentFlashcard(allFlashcards[0].id);
+      console.log("I performed a plus action");
     }
   };
 
@@ -47,10 +48,11 @@ const FlashcardsModal = ({
       setCurrentIdx(currentIdx - 1);
       setCurrentFlashcard(allFlashcards[currentIdx].id);
       console.log(currentIdx);
-      console.log(currentFlashcard);
+      console.log("I performed a minus action");
     } else {
-      setCurrentIdx(0);
-      setCurrentFlashcard(allFlashcards[0].id);
+      setCurrentIdx(1);
+      setCurrentFlashcard(allFlashcards[allFlashcards.length - 1].id);
+      console.log("I performed a minus action");
     }
   };
 
