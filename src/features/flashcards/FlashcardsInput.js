@@ -12,6 +12,7 @@ import {
 } from "./styles/FlashcardInputStyles";
 
 const FlashcardsInput = () => {
+  const [idx, setIdx] = useState(0);
   const [front, setFront] = useState("");
   const [back, setBack] = useState("");
   const [group, setGroup] = useState("");

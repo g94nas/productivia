@@ -22,7 +22,7 @@ import {
   ContentWrapper,
 } from "./styles/FlashcardsStyles";
 
-const Flashcards = ({ id }) => {
+const Flashcards = ({ id, index }) => {
   const flashcard = useSelector((state) => selectFlashcardsById(state, id));
   const [editToggle, setEditToggle] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -54,6 +54,7 @@ const Flashcards = ({ id }) => {
           setIsOpen={setIsOpen}
           handleOpenModal={handleOpenModal}
           handleComplete={handleComplete}
+          index={index}
         />
       ) : (
         <MainWrapper>

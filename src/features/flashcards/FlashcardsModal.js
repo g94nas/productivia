@@ -7,24 +7,53 @@ import {
   NextIconRight,
   ExitIcon,
   SuccessIcon,
-  BackgroundWrapper,
 } from "./styles/FlashcardsModalStyles";
-
+import { useSelector } from "react-redux";
+import { selectFlashcardsById, selectFlashcards } from "./flashcardSlice";
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 import { GrClose } from "react-icons/gr";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import ReactModal from "react-modal";
 
 const FlashcardsModal = ({
-  front,
-  back,
   id,
   completed,
   isOpen,
   setIsOpen,
   handleComplete,
+  index,
 }) => {
   const [showAnswer, setShowAnswer] = useState(false);
+  const allFlashcards = useSelector(selectFlashcards);
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const [currentFlashcard, setCurrentFlashcard] = useState(id);
+  const flashcard =
+    useSelector((state) => selectFlashcardsById(state, currentFlashcard)) || "";
+
+  const nextFlashcard = () => {
+    if (id && currentIdx >= 0 && currentIdx <= allFlashcards.length - 1) {
+      setCurrentIdx(currentIdx + 1);
+      setCurrentFlashcard(allFlashcards[currentIdx].id);
+      console.log(currentIdx);
+      console.log(currentFlashcard);
+    } else {
+      setCurrentIdx(0);
+      setCurrentFlashcard(allFlashcards[0].id);
+    }
+  };
+
+  const prevFlashcard = () => {
+    if (currentIdx >= 0 && currentIdx <= allFlashcards.length - 1) {
+      setCurrentIdx(currentIdx - 1);
+      setCurrentFlashcard(allFlashcards[currentIdx].id);
+      console.log(currentIdx);
+      console.log(currentFlashcard);
+    } else {
+      setCurrentIdx(0);
+      setCurrentFlashcard(allFlashcards[0].id);
+    }
+  };
+
   return (
     <ReactModal
       isOpen={isOpen}
@@ -44,19 +73,19 @@ const FlashcardsModal = ({
     >
       {/* <BackgroundWrapper> */}
       <ModalWrapper>
-        <NextIconLeft>
+        <NextIconLeft onClick={prevFlashcard}>
           <AiOutlineArrowLeft />
         </NextIconLeft>
         <SuccessIcon onClick={handleComplete}>
           <IoIosCheckmarkCircleOutline />
         </SuccessIcon>
         <Front onClick={() => setShowAnswer(!showAnswer)}>
-          {showAnswer ? back : front}
+          {showAnswer ? flashcard.back : flashcard.front}
         </Front>
         <ExitIcon onClick={() => setIsOpen(!isOpen)}>
           <GrClose />
         </ExitIcon>
-        <NextIconRight>
+        <NextIconRight onClick={nextFlashcard}>
           <AiOutlineArrowRight />
         </NextIconRight>
       </ModalWrapper>
