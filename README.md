@@ -33,6 +33,19 @@ Productivia is a productivity-focused web application. It provides the necessary
 
 ### Folder Structure Overview
 * Features
-  * Contains all the Redux-related Logic
+  * Contains all Redux-related Logic
 * Components
-  * Contains all components with their style files
+  * Contains all components along with their style files
+  
+### List of Missing Features and/or Fixes to be Implemented
+I plan on adding all of these eventually:
+* Productivia is not responsive
+* Pomodoro lacks an audio clue
+* Pomodoro lacks a counter of completed pomodoro sessions
+* Flashcards can't be filtered by group just yet
+* Flashcards experience a bug when touching the prev arrow immediately after the next one and the other way around
+* Add a timeblock feature to the todos
+* Highlight currently selected filter to the todos
+
+### Currently Working on:
+* Pushing todos and flashcards to firestore so that user don't lose them upon refreshing
