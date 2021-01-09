@@ -39,7 +39,7 @@ const LoggedHeader = () => {
             <NavLink to="/flashcards">Flashcards</NavLink>
           </MenuItem>
           <MenuItem>
-            <NavLink to="#">Pomodoro</NavLink>
+            <NavLink to="/pomodoro">Pomodoro</NavLink>
           </MenuItem>
         </MenuContainer>
         <ButtonContainer>
