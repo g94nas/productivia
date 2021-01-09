@@ -1,13 +1,6 @@
 import React from "react";
+import Duration from "luxon/src/duration.js";
 import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  selectSessionLength,
-  selectBreakLength,
-  setSessionTime,
-  setBreakTime,
-  setResetTime,
-} from "./pomodoroSlice";
 import {
   MainWrapper,
   Title,
@@ -15,59 +8,89 @@ import {
   Time,
   ButtonWrapper,
   Button,
-  Checkbox,
   Span,
   Subtitle,
   SmallWrapper,
-  Input,
-  Separator,
-  AudioText,
-  AudioWrapper,
 } from "./styles/PomodoroStyles.js";
 
 const Pomodoro = () => {
-  const sessionLength = useSelector(selectSessionLength);
-  const breakLength = useSelector(selectBreakLength);
-  const dispatch = useDispatch();
-  const [timeLeft, setTimeLeft] = useState(sessionLength);
+  const [sessionTimeLeft, setSessionTimeLeft] = useState(1500);
+  const [hasStarted, setHasStarted] = useState(null);
+  const [isSession, setIsSession] = useState(true);
+
+  useEffect(() => {
+    if (hasStarted && sessionTimeLeft >= 0) {
+      const intervalStarted = setInterval(() => {
+        setSessionTimeLeft((sessionTimeLeft) => sessionTimeLeft - 1);
+      }, 1000);
+      return () => clearInterval(intervalStarted);
+    } else if (sessionTimeLeft < 0) {
+      setSessionTimeLeft(0);
+    }
+  }, [hasStarted, sessionTimeLeft]);
+
+  const formattedSessionTimeLeft = Duration.fromObject({
+    seconds: sessionTimeLeft,
+  }).toFormat("mm:ss");
+
+  const handleSessionStart = () => {
+    setIsSession(true);
+    setSessionTimeLeft(1500);
+  };
+
+  const handleBreakStart = () => {
+    setIsSession(false);
+    setSessionTimeLeft(300);
+  };
+
+  const handleSessionOrBreak = () => {
+    if (isSession) {
+      setSessionTimeLeft(1500);
+    } else {
+      setSessionTimeLeft(300);
+    }
+  };
 
   return (
     <MainWrapper>
       <Title>Pomodoro</Title>
       <TimeWrapper>
-        <Time>300</Time>
+        <Time>{formattedSessionTimeLeft}</Time>
       </TimeWrapper>
       <ButtonWrapper>
-        <Button>
+        <Button onClick={handleSessionStart}>
           <Span>Session</Span>
         </Button>
-        <Button>
+        <Button onClick={handleBreakStart}>
           <Span>Break</Span>
         </Button>
       </ButtonWrapper>
-      <ButtonWrapper>
-        <Button>
-          <Span>Start</Span>
-        </Button>
-        <Button>
-          <Span>Stop</Span>
-        </Button>
-      </ButtonWrapper>
-      <AudioWrapper>
-        <Checkbox></Checkbox>
-        <AudioText>Audio Clue</AudioText>
-      </AudioWrapper>
-      <Subtitle>Session Length</Subtitle>
+      {hasStarted ? (
+        <SmallWrapper>
+          <Button type="button" onClick={() => setHasStarted(false)}>
+            <Span style={{ fontWeight: "bold" }}>Stop</Span>
+          </Button>
+        </SmallWrapper>
+      ) : (
+        <SmallWrapper>
+          <Button type="button" onClick={() => setHasStarted(true)}>
+            <Span style={{ fontWeight: "bold" }}>Start</Span>
+          </Button>
+        </SmallWrapper>
+      )}
+      <Subtitle>Change Duration</Subtitle>
       <SmallWrapper>
-        <Input></Input>
-        <Separator>:</Separator>
-        <Input></Input>
+        <Button onClick={() => setSessionTimeLeft(sessionTimeLeft + 60)}>
+          <Span>+1 Minute</Span>
+        </Button>
+        <Button onClick={() => setSessionTimeLeft(sessionTimeLeft - 60)}>
+          <Span>-1 Minute</Span>
+        </Button>
       </SmallWrapper>
-      <Subtitle>Break Length</Subtitle>
       <SmallWrapper>
-        <Input></Input>
-        <Separator>:</Separator>
-        <Input></Input>
+        <Button onClick={handleSessionOrBreak}>
+          <Span style={{ fontWeight: "bold" }}>Reset</Span>
+        </Button>
       </SmallWrapper>
     </MainWrapper>
   );
