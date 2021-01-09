@@ -6,6 +6,7 @@ import { login, logout, selectUser } from "./features/userSlice";
 import { auth } from "./firebase";
 import Home from "./pages";
 import FlashcardPage from "./pages/FlashcardPage";
+import PomodoroPage from "./pages/PomodoroPage";
 import SignInPage from "./pages/SignInPage";
 import SignupPage from "./pages/SignupPage";
 import TodoPage from "./pages/TodoPage";
@@ -48,6 +49,7 @@ function App() {
             <Route path="/" component={TodoPage} exact />
             <Route path="/todos" component={TodoPage} exact />
             <Route path="/flashcards" component={FlashcardPage} exact />
+            <Route path="/pomodoro" component={PomodoroPage} exact />
           </Switch>
         </Router>
       )}
