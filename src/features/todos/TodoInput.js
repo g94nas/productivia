@@ -1,13 +1,17 @@
 import React from "react";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { addTodo } from "./todoSlice";
 import { nanoid } from "@reduxjs/toolkit";
 import { Input, Title, Form, MainWrapper } from "./styles/TodoInputStyles";
+import { db } from "../../firebase";
+import { selectUser } from "../userSlice";
 
 const TodoInput = () => {
   const [task, setTask] = useState("");
+  const [idTracker, setIdTracker] = useState(nanoid());
   const dispatch = useDispatch();
+  const user = useSelector(selectUser);
 
   const handleChange = (e) => {
     setTask(e.target.value);
@@ -15,7 +19,14 @@ const TodoInput = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addTodo({ id: nanoid(), content: task, completed: false }));
+    dispatch(addTodo({ id: idTracker, content: task, completed: false }));
+    db.collection("todos").add({
+      id: idTracker,
+      content: task,
+      completed: false,
+      userId: user.uid,
+    });
+    setIdTracker(nanoid());
     setTask("");
   };
 

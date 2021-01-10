@@ -2,6 +2,7 @@ import {
   createSlice,
   createEntityAdapter,
   createSelector,
+  createAsyncThunk,
 } from "@reduxjs/toolkit";
 
 import { FilterStatus } from "../filters/filterSlice";
