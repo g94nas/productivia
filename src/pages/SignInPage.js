@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "../components/header/Header";
+import SignLoginHeader from "../components/header/SignLoginHeader";
 import Login from "../components/login/Login";
 
 const SignInPage = () => {
   return (
     <>
-      <Header />
+      <SignLoginHeader />
       <Login />
     </>
   );
