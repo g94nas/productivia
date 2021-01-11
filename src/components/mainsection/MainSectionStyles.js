@@ -60,7 +60,7 @@ export const MainSectionTitle = styled.h1`
 `;
 export const MainSectionSubtitle = styled.h2`
   font-weight: 300;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #606161;
   padding-bottom: 4rem;
   padding-left: 0.2rem;

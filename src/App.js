@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { login, logout, selectUser } from "./features/userSlice";
@@ -10,10 +10,19 @@ import PomodoroPage from "./pages/PomodoroPage";
 import SignInPage from "./pages/SignInPage";
 import SignupPage from "./pages/SignupPage";
 import TodoPage from "./pages/TodoPage";
+import { GridLoader } from "react-spinners";
+import { CentralWrapper } from "./features/todos/styles/LoaderStyles";
 
 function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  }, []);
 
   useEffect(() => {
     auth.onAuthStateChanged((userAuth) => {
@@ -33,7 +42,11 @@ function App() {
 
   return (
     <>
-      {!user ? (
+      {loading ? (
+        <CentralWrapper>
+          <GridLoader size={15} color={"#f5d432"} loading={loading} />
+        </CentralWrapper>
+      ) : !user ? (
         <Router>
           <Switch>
             <Route path="/" component={Home} exact />
