@@ -26,7 +26,8 @@ export const ModalWrapper = styled.div`
 
 export const Front = styled.h1`
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-weight: 300;
   margin: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
@@ -40,6 +41,11 @@ export const SuccessIcon = styled.h1`
   align-self: flex-start;
   margin: 3rem 0;
   cursor: pointer;
+
+  &:hover {
+    color: green;
+    transition: 0.3s;
+  }
 `;
 
 export const ExitIcon = styled.h1`
@@ -49,6 +55,11 @@ export const ExitIcon = styled.h1`
   justify-self: flex-end;
   align-self: flex-start;
   cursor: pointer;
+
+  &:hover {
+    font-size: 2.5rem;
+    transition: 0.3s;
+  }
 `;
 
 export const NextIconRight = styled.div`
@@ -60,6 +71,11 @@ export const NextIconRight = styled.div`
   padding-right: 2rem;
   cursor: pointer;
   position: sticky;
+
+  &:hover {
+    color: green;
+    transition: 0.3s;
+  }
 `;
 
 export const NextIconLeft = styled.div`
@@ -71,4 +87,9 @@ export const NextIconLeft = styled.div`
   font-size: 3rem;
   cursor: pointer;
   position: sticky;
+
+  &:hover {
+    color: green;
+    transition: 0.3s;
+  }
 `;
