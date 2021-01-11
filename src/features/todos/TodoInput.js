@@ -26,7 +26,7 @@ const TodoInput = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addTodo({ id: idTracker, content: task, completed: false }));
-    db.collection("todos").add({
+    db.collection("todos").doc(idTracker).set({
       id: idTracker,
       content: task,
       completed: false,

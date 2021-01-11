@@ -14,6 +14,7 @@ import {
   TextArea,
   EditIcon,
 } from "./styles/TodosStyles";
+import { db } from "../../firebase";
 
 const Todos = ({ id, backgroundColor }) => {
   const [editContent, setEditContent] = useState("");
@@ -23,10 +24,14 @@ const Todos = ({ id, backgroundColor }) => {
 
   const handleDelete = () => {
     dispatch(removeTodo(todo.id));
+    db.collection("todos").doc(todo.id).delete();
   };
 
   const handleToggle = () => {
     dispatch(toggleTodo(todo.id));
+    db.collection("todos")
+      .doc(todo.id)
+      .set({ ...todo, completed: !todo.completed });
   };
 
   const handleClick = () => {
@@ -40,6 +45,9 @@ const Todos = ({ id, backgroundColor }) => {
   const handleEditSubmision = (e) => {
     e.preventDefault();
     dispatch(editTodo({ id: todo.id, content: editContent }));
+    db.collection("todos")
+      .doc(todo.id)
+      .set({ ...todo, content: editContent });
     setIsBeingEdited(false);
   };
 
