@@ -2,7 +2,6 @@ import {
   createSlice,
   createEntityAdapter,
   createSelector,
-  createAsyncThunk,
 } from "@reduxjs/toolkit";
 
 import { FilterStatus } from "../filters/filterSlice";
@@ -18,6 +17,7 @@ const todosSlice = createSlice({
   initialState,
   reducers: {
     addTodo: todosAdapter.addOne,
+    addManyTodos: todosAdapter.addMany,
     removeTodo: todosAdapter.removeOne,
     toggleTodo(state, action) {
       const todoId = action.payload;
@@ -30,7 +30,13 @@ const todosSlice = createSlice({
 
 export default todosSlice.reducer;
 
-export const { addTodo, removeTodo, toggleTodo, editTodo } = todosSlice.actions;
+export const {
+  addTodo,
+  addManyTodos,
+  removeTodo,
+  toggleTodo,
+  editTodo,
+} = todosSlice.actions;
 
 export const {
   selectAll: selectAllTodos,
