@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { addFlashcard } from "./flashcardSlice";
-import { useDispatch } from "react-redux";
+import { addFlashcard, addManyFlashcards } from "./flashcardSlice";
+import { useDispatch, useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 import {
   MainWrapper,
@@ -10,13 +10,22 @@ import {
   Input,
   Button,
 } from "./styles/FlashcardInputStyles";
+import { db } from "../../firebase";
+import { selectUser } from "../userSlice";
 
 const FlashcardsInput = () => {
-  const [idx, setIdx] = useState(0);
+  const [idTracker, setIdTracker] = useState(nanoid());
   const [front, setFront] = useState("");
   const [back, setBack] = useState("");
   const [group, setGroup] = useState("");
   const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+
+  React.useEffect(() => {
+    db.collection("flashcards").onSnapshot((snapshot) => {
+      dispatch(addManyFlashcards(snapshot.docs.map((doc) => doc.data())));
+    });
+  }, []);
 
   const handleFront = (e) => {
     setFront(e.target.value);
@@ -35,16 +44,26 @@ const FlashcardsInput = () => {
     if (front && back && group) {
       dispatch(
         addFlashcard({
-          id: nanoid(),
+          id: idTracker,
           front: front,
           back: back,
           group: group,
           completed: false,
+          uid: user.uid,
         })
       );
+      db.collection("flashcards").doc(idTracker).set({
+        id: idTracker,
+        front: front,
+        back: back,
+        group: group,
+        completed: false,
+        uid: user.uid,
+      });
       setFront("");
       setBack("");
       setGroup("");
+      setIdTracker(nanoid());
     } else {
       alert("Please fill all three input fields");
     }

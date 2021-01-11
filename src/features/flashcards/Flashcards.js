@@ -21,21 +21,24 @@ import {
   EditIcon,
   ContentWrapper,
 } from "./styles/FlashcardsStyles";
+import { db } from "../../firebase";
 
 const Flashcards = ({ id, index }) => {
   const flashcard = useSelector((state) => selectFlashcardsById(state, id));
-  const [editToggle, setEditToggle] = useState(false);
+  const [isEdited, setIsEdited] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isCompleted, setIsCompleted] = useState(false);
   const dispatch = useDispatch();
 
   const handleDelete = () => {
     dispatch(removeFlashcard(flashcard.id));
+    db.collection("flashcards").doc(flashcard.id).delete();
   };
 
   const handleComplete = () => {
     dispatch(completeFlashcard(flashcard.id));
-    setIsCompleted(!isCompleted);
+    db.collection("flashcards")
+      .doc(flashcard.id)
+      .set({ ...flashcard, completed: !flashcard.completed });
   };
 
   const handleOpenModal = () => {
@@ -61,7 +64,9 @@ const Flashcards = ({ id, index }) => {
           <ContentWrapper>
             <Card
               style={{
-                backgroundColor: isCompleted ? "#99ff99" : "transparent",
+                backgroundColor: flashcard.completed
+                  ? "#99ff99"
+                  : "transparent",
                 transition: "0.5s",
               }}
             >

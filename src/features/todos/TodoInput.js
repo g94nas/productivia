@@ -30,7 +30,7 @@ const TodoInput = () => {
       id: idTracker,
       content: task,
       completed: false,
-      userId: user.uid,
+      uid: user.uid,
     });
     setIdTracker(nanoid());
     setTask("");

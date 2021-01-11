@@ -9,6 +9,7 @@ const flashcardSlice = createSlice({
   initialState,
   reducers: {
     addFlashcard: flashcardAdapter.addOne,
+    addManyFlashcards: flashcardAdapter.addMany,
     removeFlashcard: flashcardAdapter.removeOne,
     editFlashcard: flashcardAdapter.upsertOne,
     completeFlashcard(state, action) {
@@ -21,6 +22,7 @@ const flashcardSlice = createSlice({
 
 export const {
   addFlashcard,
+  addManyFlashcards,
   removeFlashcard,
   editFlashcard,
   completeFlashcard,
