@@ -7,12 +7,16 @@ Productivia is a productivity-focused web application. It provides the necessary
   * Remove Todo
   * Mark Todo as completed
   * Small tracker of completed and active todos
+  * Filter Todos by completion status
 * Flashcards
-  * Add, update and delete flashcards
+  * Add Flashcards
+  * Delete Flashcards
+  * Update Flashcards
+  * Mark Flashcard as completed
+  * Filter Flashcard by completion status
 * Pomodoro Clock
   * Choose session duration
   * Choose break duration
-  * Audio clue when session is over
 
 ## What I've Learned
 * Redux Toolkit Worfklow
