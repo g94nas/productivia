@@ -30,12 +30,6 @@ Productivia is a productivity-focused web application. It provides the necessary
 * React Router
 * Firebase
 * Styled Components
-
-### Folder Structure Overview
-* Features
-  * Contains all Redux-related Logic
-* Components
-  * Contains all components along with their style files
   
 ### List of Missing Features and/or Fixes to be Implemented
 I plan on adding all of these eventually:
@@ -45,7 +39,3 @@ I plan on adding all of these eventually:
 * Flashcards can't be filtered by group just yet
 * Flashcards experience a bug when touching the prev arrow immediately after the next one and the other way around
 * Add a timeblock feature to the todos
-* Highlight currently selected filter to the todos
-
-### Currently Working on:
-* Pushing todos and flashcards to firestore so that user don't lose them upon refreshing
