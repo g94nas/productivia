@@ -43,3 +43,6 @@ I plan on adding all of these eventually:
 * Flashcards can't be filtered by group just yet
 * Flashcards experience a bug when touching the prev arrow immediately after the next one and the other way around
 * Add a timeblock feature to the todos
+
+### Currently Working on
+* Making the site responsive
