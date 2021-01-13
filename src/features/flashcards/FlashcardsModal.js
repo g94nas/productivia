@@ -53,6 +53,8 @@ const FlashcardsModal = ({ id, isOpen, setIsOpen, handleComplete }) => {
   return (
     <ReactModal
       isOpen={isOpen}
+      className="Modal"
+      overlayClassName="Overlay"
       style={{
         overlay: {
           backgroundColor: "rgba(0,0,0,0.64)",

@@ -6,6 +6,10 @@ export const MainWrapper = styled.div`
   justify-content: center;
   align-items: center;
   position: fixed;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const SecondWrapper = styled.div`

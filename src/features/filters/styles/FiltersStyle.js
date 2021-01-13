@@ -34,4 +34,8 @@ export const MainWrapper = styled.div`
   padding: 1rem;
   border: 2px solid #f5d432;
   padding-bottom: 1.25rem;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;

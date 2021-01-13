@@ -5,6 +5,17 @@ export const MainWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   align-content: center;
+
+  @media screen and (max-width: 768px) {
+    width: 400px;
+    height: 25px;
+    padding-bottom: 2rem;
+  }
+
+  @media screen and (max-width: 460px) {
+    width: 200px;
+    padding-bottom: 3rem;
+  }
 `;
 
 export const SecondWrapper = styled.div`
@@ -16,6 +27,14 @@ export const SecondWrapper = styled.div`
   border-bottom: 1px solid #f5d432;
   background-color: ${({ backgroundColor }) =>
     backgroundColor ? "rgba(130, 253, 99, 0.24)" : "none"};
+
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 460px) {
+  }
 `;
 
 export const TextArea = styled.textarea`
@@ -41,6 +60,10 @@ export const CheckedIcon = styled.div`
   &:hover {
     color: green;
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 export const Task = styled.p`
@@ -50,6 +73,17 @@ export const Task = styled.p`
   font-weight: 300;
   padding-left: 1rem;
   align-self: center;
+
+  @media screen and (max-width: 768px) {
+    width: 400px;
+    height: 100%;
+    padding-bottom: 2rem;
+  }
+
+  @media screen and (max-width: 460px) {
+    width: 200px;
+    padding-bottom: 3rem;
+  }
 `;
 
 export const RemoveIcon = styled.div`
@@ -62,6 +96,10 @@ export const RemoveIcon = styled.div`
 
   &:hover {
     color: #d93d3d;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
   }
 `;
 
@@ -76,5 +114,9 @@ export const EditIcon = styled.div`
 
   &:hover {
     color: #f5d432;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
   }
 `;
