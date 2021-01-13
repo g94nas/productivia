@@ -54,7 +54,11 @@ const Todos = ({ id, backgroundColor }) => {
   const displayTodos = isBeingEdited ? (
     <MainWrapper>
       <SecondWrapper>
-        <TextArea onChange={handleEdit} value={editContent}></TextArea>
+        <TextArea
+          onChange={handleEdit}
+          value={editContent}
+          placeholder={todo.content}
+        ></TextArea>
         <CheckedIcon onClick={handleEditSubmision}>
           <IoIosCheckmarkCircleOutline />
         </CheckedIcon>

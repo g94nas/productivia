@@ -104,6 +104,7 @@ export const MainSectionButton = styled(Link)`
   padding: 0.5rem 3rem 0.5rem 3rem;
   border-radius: 3em;
   cursor: pointer;
+  transition: 0.3s;
 
   @media screen and (max-width: 768px) {
     display: block;
@@ -111,5 +112,10 @@ export const MainSectionButton = styled(Link)`
     align-self: center;
     justify-self: center;
     text-align: center;
+  }
+
+  &:hover {
+    padding: 0.5rem 3.5rem 0.5rem 3.5rem;
+    transition: 0.3s;
   }
 `;

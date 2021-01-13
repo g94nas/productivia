@@ -126,9 +126,15 @@ export const Button = styled(Link)`
   border-radius: 3em;
   margin-top: 2.6rem;
   cursor: pointer;
+  transition: 0.3s;
 
   @media screen and (max-width: 768px) {
     display: none;
+  }
+
+  &:hover {
+    width: 280px;
+    transition: 0.3s;
   }
 `;
 

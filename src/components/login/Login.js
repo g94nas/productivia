@@ -13,6 +13,7 @@ import {
   Span,
   Button,
 } from "./LoginStyles";
+import useKey from "../../hooks/useKey";
 
 const Login = () => {
   const history = useHistory();
@@ -55,6 +56,8 @@ const Login = () => {
       setPassword(password);
     }
   };
+
+  useKey("Enter", loginToApp);
 
   return (
     <MainWrapper>

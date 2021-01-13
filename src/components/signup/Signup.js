@@ -5,6 +5,7 @@ import { login } from "../../features/userSlice";
 import { useHistory } from "react-router-dom";
 
 import { MainWrapper, Form, MainText, Input, Button } from "./SignupStyles";
+import useKey from "../../hooks/useKey";
 
 const Signup = () => {
   const history = useHistory();
@@ -51,6 +52,8 @@ const Signup = () => {
       })
       .catch((error) => alert(error));
   };
+
+  useKey("Enter", register);
 
   return (
     <MainWrapper>

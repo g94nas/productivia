@@ -12,6 +12,7 @@ import {
 } from "./styles/FlashcardInputStyles";
 import { db } from "../../firebase";
 import { selectUser } from "../userSlice";
+import useKey from "../../hooks/useKey";
 
 const FlashcardsInput = () => {
   const [idTracker, setIdTracker] = useState(nanoid());
@@ -68,6 +69,8 @@ const FlashcardsInput = () => {
       alert("Please fill all three input fields");
     }
   };
+
+  useKey("Enter", handleSubmit);
 
   return (
     <MainWrapper>

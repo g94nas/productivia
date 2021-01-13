@@ -53,7 +53,7 @@ export const Button = styled.button`
   margin-right: 0.5rem;
   height: 2rem;
   border: 3px solid #f5d432;
-  background: transparent;
+  background: ${({ isActive }) => (isActive ? "#f5d432" : "transparent")};
   cursor: pointer;
   outline: none;
   font-family: "Poppins";

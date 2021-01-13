@@ -66,4 +66,9 @@ export const Button = styled(Link)`
   font-weight: 300;
   margin-top: 2.5rem;
   cursor: pointer;
+
+  &:hover {
+    width: 280px;
+    transition: ease-in 0.5s;
+  }
 `;

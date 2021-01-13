@@ -13,7 +13,9 @@ import {
   SmallWrapper,
 } from "./styles/PomodoroStyles.js";
 
-const Pomodoro = () => {
+const Pomodoro = ({ isActive }) => {
+  const [sessionActive, setSessionActive] = useState(false);
+  const [breakActive, setBreakActive] = useState(false);
   const [sessionTimeLeft, setSessionTimeLeft] = useState(1500);
   const [hasStarted, setHasStarted] = useState(null);
   const [isSession, setIsSession] = useState(true);
@@ -36,11 +38,15 @@ const Pomodoro = () => {
   const handleSessionStart = () => {
     setIsSession(true);
     setSessionTimeLeft(1500);
+    setBreakActive(false);
+    setSessionActive(true);
   };
 
   const handleBreakStart = () => {
     setIsSession(false);
     setSessionTimeLeft(300);
+    setBreakActive(true);
+    setSessionActive(false);
   };
 
   const handleSessionOrBreak = () => {
@@ -53,15 +59,21 @@ const Pomodoro = () => {
 
   return (
     <MainWrapper>
-      <Title>Pomodoro</Title>
+      <Title>POMODORO</Title>
       <TimeWrapper>
         <Time>{formattedSessionTimeLeft}</Time>
       </TimeWrapper>
       <ButtonWrapper>
-        <Button onClick={handleSessionStart}>
+        <Button
+          onClick={handleSessionStart}
+          isActive={sessionActive ? (isActive = true) : (isActive = false)}
+        >
           <Span>Session</Span>
         </Button>
-        <Button onClick={handleBreakStart}>
+        <Button
+          onClick={handleBreakStart}
+          isActive={breakActive ? (isActive = true) : (isActive = false)}
+        >
           <Span>Break</Span>
         </Button>
       </ButtonWrapper>

@@ -44,11 +44,17 @@ export const NavLogo = styled(Link)`
   text-decoration: none;
   align-self: center;
   color: #f5d432;
+  transition: 1s;
 
   @media screen and (max-width: 768px) {
     font-size: 1rem;
     justify-self: flex-start;
     padding-right: 1rem;
+  }
+
+  &:hover {
+    color: #000;
+    transition: 1s;
   }
 `;
 

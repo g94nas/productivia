@@ -12,7 +12,7 @@ export const Button = styled.button`
   width: 100px;
   height: 25px;
   margin-top: 1rem;
-  background-color: transparent;
+  background-color: ${({ isActive }) => (isActive ? "#f5d432" : "transparent")};
   cursor: pointer;
 
   &:hover {
@@ -33,4 +33,5 @@ export const MainWrapper = styled.div`
   align-items: center;
   padding: 1rem;
   border: 2px solid #f5d432;
+  padding-bottom: 1.25rem;
 `;
