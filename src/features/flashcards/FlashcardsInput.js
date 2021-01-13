@@ -23,10 +23,22 @@ const FlashcardsInput = () => {
   const user = useSelector(selectUser);
 
   React.useEffect(() => {
-    db.collection("flashcards").onSnapshot((snapshot) => {
-      dispatch(addManyFlashcards(snapshot.docs.map((doc) => doc.data())));
-    });
-  }, []);
+    db.collection("flashcards")
+      .get()
+      .then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+          const flashcardUid = doc.data().uid;
+          const authUserUid = user.uid;
+          if (flashcardUid === authUserUid) {
+            dispatch(addFlashcard(doc.data()));
+            console.log("I'm retrieving data");
+          }
+        });
+      })
+      .catch(function (error) {
+        console.log("Error getting documents: ", error);
+      });
+  }, [user.uid, dispatch]);
 
   const handleFront = (e) => {
     setFront(e.target.value);

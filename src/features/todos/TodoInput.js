@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addTodo, addManyTodos } from "./todoSlice";
+import { addTodo } from "./todoSlice";
 import { nanoid } from "@reduxjs/toolkit";
 import { Input, Title, Form, MainWrapper } from "./styles/TodoInputStyles";
 import { db } from "../../firebase";
@@ -14,10 +14,22 @@ const TodoInput = () => {
   const user = useSelector(selectUser);
 
   React.useEffect(() => {
-    db.collection("todos").onSnapshot((snapshot) => {
-      dispatch(addManyTodos(snapshot.docs.map((doc) => doc.data())));
-    });
-  }, []);
+    db.collection("todos")
+      .get()
+      .then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+          const todoUid = doc.data().uid;
+          const authUserUid = user.uid;
+          if (todoUid === authUserUid) {
+            dispatch(addTodo(doc.data()));
+            console.log("I'm retrieving data");
+          }
+        });
+      })
+      .catch(function (error) {
+        console.log("Error getting documents: ", error);
+      });
+  }, [user.uid, dispatch]);
 
   const handleChange = (e) => {
     setTask(e.target.value);
