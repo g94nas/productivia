@@ -45,6 +45,11 @@ const FlashcardsModal = ({ id, isOpen, setIsOpen, handleComplete }) => {
     }
   };
 
+  const handleClickSuccessIcon = () => {
+    handleComplete();
+    nextFlashcard();
+  };
+
   return (
     <ReactModal
       isOpen={isOpen}
@@ -67,7 +72,7 @@ const FlashcardsModal = ({ id, isOpen, setIsOpen, handleComplete }) => {
         <NextIconLeft onClick={prevFlashcard}>
           <AiOutlineArrowLeft />
         </NextIconLeft>
-        <SuccessIcon onClick={handleComplete}>
+        <SuccessIcon onClick={handleClickSuccessIcon}>
           <IoIosCheckmarkCircleOutline />
         </SuccessIcon>
         <Front onClick={() => setShowAnswer(!showAnswer)}>

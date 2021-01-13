@@ -57,9 +57,11 @@ export const Button = styled.button`
   cursor: pointer;
   outline: none;
   font-family: "Poppins";
+  transition: 0.4s;
 
   &:hover {
     background-color: #f5d432;
+    transition: 0.4s;
   }
 `;
 

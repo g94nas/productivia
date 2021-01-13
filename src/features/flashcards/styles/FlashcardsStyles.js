@@ -62,6 +62,7 @@ export const CompletedIcon = styled.div`
   cursor: pointer;
   border-right: 2px solid #f5d432;
   line-height: 2.2;
+  transition: 0.5s;
 
   &:hover {
     background-color: #99ff99;
@@ -78,6 +79,7 @@ export const EraseIcon = styled.p`
   cursor: pointer;
   border-right: 2px solid #f5d432;
   line-height: 2.2;
+  transition: 0.5s;
 
   &:hover {
     background-color: #ffc2b3;
@@ -93,6 +95,7 @@ export const EditIcon = styled.div`
   height: 30px;
   cursor: pointer;
   line-height: 2.2;
+  transition: 0.5s;
 
   &:hover {
     background-color: #99bbff;

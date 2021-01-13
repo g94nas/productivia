@@ -1,6 +1,6 @@
 import React from "react";
-import { useState } from "react";
-import { addFlashcard, addManyFlashcards } from "./flashcardSlice";
+import { useState, useRef, useEffect } from "react";
+import { addFlashcard } from "./flashcardSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 import {
@@ -9,20 +9,21 @@ import {
   Form,
   Input,
   Button,
+  TextArea,
 } from "./styles/FlashcardInputStyles";
 import { db } from "../../firebase";
 import { selectUser } from "../userSlice";
-import useKey from "../../hooks/useKey";
 
 const FlashcardsInput = () => {
   const [idTracker, setIdTracker] = useState(nanoid());
   const [front, setFront] = useState("");
   const [back, setBack] = useState("");
   const [group, setGroup] = useState("");
+  const focusInput = useRef();
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
 
-  React.useEffect(() => {
+  useEffect(() => {
     db.collection("flashcards")
       .get()
       .then(function (querySnapshot) {
@@ -39,6 +40,10 @@ const FlashcardsInput = () => {
         console.log("Error getting documents: ", error);
       });
   }, [user.uid, dispatch]);
+
+  useEffect(() => {
+    focusInput.current.focus();
+  }, []);
 
   const handleFront = (e) => {
     setFront(e.target.value);
@@ -82,8 +87,6 @@ const FlashcardsInput = () => {
     }
   };
 
-  useKey("Enter", handleSubmit);
-
   return (
     <MainWrapper>
       <Title>FLASHCARDS</Title>
@@ -94,16 +97,17 @@ const FlashcardsInput = () => {
           type="text"
           value={front}
           onChange={handleFront}
+          ref={focusInput}
         ></Input>
       </Form>
       <Form onSubmit={(e) => e.preventDefault()}>
-        <Input
+        <TextArea
           required
           type="text"
           value={back}
-          placeholder="Add back of the flashcard"
+          placeholder=" Add back of the flashcard"
           onChange={handleBack}
-        ></Input>
+        ></TextArea>
       </Form>
       <Form onSubmit={(e) => e.preventDefault()}>
         <Input

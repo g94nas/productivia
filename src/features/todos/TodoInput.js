@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addTodo } from "./todoSlice";
 import { nanoid } from "@reduxjs/toolkit";
@@ -10,10 +10,11 @@ import { selectUser } from "../userSlice";
 const TodoInput = () => {
   const [task, setTask] = useState("");
   const [idTracker, setIdTracker] = useState(nanoid());
+  const focusInput = useRef();
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
 
-  React.useEffect(() => {
+  useEffect(() => {
     db.collection("todos")
       .get()
       .then(function (querySnapshot) {
@@ -30,6 +31,10 @@ const TodoInput = () => {
         console.log("Error getting documents: ", error);
       });
   }, [user.uid, dispatch]);
+
+  useEffect(() => {
+    focusInput.current.focus();
+  });
 
   const handleChange = (e) => {
     setTask(e.target.value);
@@ -53,6 +58,7 @@ const TodoInput = () => {
       <Title>TODO LIST</Title>
       <Form onSubmit={handleSubmit}>
         <Input
+          ref={focusInput}
           type="text"
           value={task}
           onChange={handleChange}

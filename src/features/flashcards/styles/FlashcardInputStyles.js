@@ -22,7 +22,7 @@ export const Input = styled.input`
   height: 35px;
   border: 2px solid #f5d432;
   outline: none;
-  padding-left: 10px;
+  padding-left: 8px;
   font-family: "Poppins";
 `;
 
@@ -37,11 +37,24 @@ export const Button = styled.button`
   font-family: "Poppins";
   margin-top: 0.75rem;
   cursor: pointer;
+  transition: 0.4s;
 
   &:hover {
-    transition: 0.3s;
+    transition: 0.4s;
     width: 250px;
     border: 2px solid #f5d432;
     background-color: transparent;
   }
+`;
+
+export const TextArea = styled.textarea`
+  display: flex;
+  flex-direction: row;
+  width: 700px;
+  height: 35px;
+  border: 2px solid #f5d432;
+  font-family: "Poppins";
+  padding: 5px;
+  background-position: bottom right;
+  background-repeat: no-repeat;
 `;
