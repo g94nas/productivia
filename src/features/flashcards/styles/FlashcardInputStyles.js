@@ -35,7 +35,7 @@ export const Button = styled.button`
   border: none;
   font-weight: 400;
   font-family: "Poppins";
-  margin-top: 0.75rem;
+  margin-top: 1.25rem;
   cursor: pointer;
   transition: 0.4s;
 

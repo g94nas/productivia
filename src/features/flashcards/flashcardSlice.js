@@ -1,4 +1,9 @@
-import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
+import {
+  createSlice,
+  createEntityAdapter,
+  createSelector,
+} from "@reduxjs/toolkit";
+import { FilterStatus } from "../filters/filterSlice";
 
 const flashcardAdapter = createEntityAdapter();
 
@@ -34,3 +39,26 @@ export const {
   selectAll: selectFlashcards,
   selectById: selectFlashcardsById,
 } = flashcardAdapter.getSelectors((state) => state.flashcards);
+
+export const selectFilteredFlashcards = createSelector(
+  selectFlashcards,
+  (state) => state.filters,
+  (flashcards, filters) => {
+    const { status } = filters;
+    const showAll = status === FilterStatus.All;
+    if (showAll) {
+      return flashcards;
+    }
+
+    const showCompleted = status === FilterStatus.Completed;
+    return flashcards.filter((flashcard) => {
+      const statusMatch = showAll || flashcard.completed === showCompleted;
+      return statusMatch;
+    });
+  }
+);
+
+export const selectFilteredTodoById = createSelector(
+  selectFilteredFlashcards,
+  (filteredFlashcards) => filteredFlashcards.map((flashcard) => flashcard.id)
+);

@@ -9,7 +9,10 @@ import {
   SuccessIcon,
 } from "./styles/FlashcardsModalStyles";
 import { useSelector } from "react-redux";
-import { selectFlashcardsById, selectFlashcards } from "./flashcardSlice";
+import {
+  selectFlashcardsById,
+  selectFilteredFlashcards,
+} from "./flashcardSlice";
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 import { GrClose } from "react-icons/gr";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
@@ -17,7 +20,7 @@ import ReactModal from "react-modal";
 
 const FlashcardsModal = ({ id, isOpen, setIsOpen, handleComplete }) => {
   const [showAnswer, setShowAnswer] = useState(false);
-  const allFlashcards = useSelector(selectFlashcards);
+  const allFlashcards = useSelector(selectFilteredFlashcards);
   const [currentIdx, setCurrentIdx] = useState(1);
   const [currentFlashcard, setCurrentFlashcard] = useState(id);
   const flashcard =
@@ -25,7 +28,7 @@ const FlashcardsModal = ({ id, isOpen, setIsOpen, handleComplete }) => {
 
   const nextFlashcard = () => {
     if (id && currentIdx >= 0 && currentIdx <= allFlashcards.length - 1) {
-      setCurrentIdx(currentIdx + 1);
+      setCurrentIdx((currentIdx) => currentIdx + 1);
       setCurrentFlashcard(allFlashcards[currentIdx].id);
       console.log(currentIdx);
     } else {
@@ -35,8 +38,8 @@ const FlashcardsModal = ({ id, isOpen, setIsOpen, handleComplete }) => {
   };
 
   const prevFlashcard = () => {
-    if (currentIdx >= 0 && currentIdx <= allFlashcards.length - 1) {
-      setCurrentIdx(currentIdx - 1);
+    if (id && currentIdx >= 0 && currentIdx <= allFlashcards.length - 1) {
+      setCurrentIdx((currentIdx) => currentIdx - 1);
       setCurrentFlashcard(allFlashcards[currentIdx].id);
       console.log(currentIdx);
     } else {
@@ -53,8 +56,6 @@ const FlashcardsModal = ({ id, isOpen, setIsOpen, handleComplete }) => {
   return (
     <ReactModal
       isOpen={isOpen}
-      className="Modal"
-      overlayClassName="Overlay"
       style={{
         overlay: {
           backgroundColor: "rgba(0,0,0,0.64)",

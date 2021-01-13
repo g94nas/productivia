@@ -13,12 +13,15 @@ import {
 } from "./styles/FlashcardInputStyles";
 import { db } from "../../firebase";
 import { selectUser } from "../userSlice";
+import FilterList from "../filters/FilterList";
+import { StatsWrapper } from "../todos/styles/TodoListStyles";
+import { MainFlashcardWrapper } from "./styles/FlashcardsListStyles";
 
 const FlashcardsInput = () => {
   const [idTracker, setIdTracker] = useState(nanoid());
   const [front, setFront] = useState("");
   const [back, setBack] = useState("");
-  const [group, setGroup] = useState("");
+  // const [group, setGroup] = useState("");
   const focusInput = useRef();
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
@@ -53,19 +56,19 @@ const FlashcardsInput = () => {
     setBack(e.target.value);
   };
 
-  const handleGroup = (e) => {
-    setGroup(e.target.value);
-  };
+  // const handleGroup = (e) => {
+  //   setGroup(e.target.value);
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (front && back && group) {
+    if (front && back) {
       dispatch(
         addFlashcard({
           id: idTracker,
           front: front,
           back: back,
-          group: group,
+          // group: group,
           completed: false,
           uid: user.uid,
         })
@@ -74,13 +77,13 @@ const FlashcardsInput = () => {
         id: idTracker,
         front: front,
         back: back,
-        group: group,
+        // group: group,
         completed: false,
         uid: user.uid,
       });
       setFront("");
       setBack("");
-      setGroup("");
+      // setGroup("");
       setIdTracker(nanoid());
     } else {
       alert("Please fill all three input fields");
@@ -90,6 +93,11 @@ const FlashcardsInput = () => {
   return (
     <MainWrapper>
       <Title>FLASHCARDS</Title>
+      <MainFlashcardWrapper>
+        <StatsWrapper>
+          <FilterList />
+        </StatsWrapper>
+      </MainFlashcardWrapper>
       <Form onSubmit={(e) => e.preventDefault()}>
         <Input
           required
@@ -109,7 +117,7 @@ const FlashcardsInput = () => {
           onChange={handleBack}
         ></TextArea>
       </Form>
-      <Form onSubmit={(e) => e.preventDefault()}>
+      {/* <Form onSubmit={(e) => e.preventDefault()}>
         <Input
           required
           placeholder="Add a group"
@@ -117,7 +125,7 @@ const FlashcardsInput = () => {
           value={group}
           onChange={handleGroup}
         ></Input>
-      </Form>
+      </Form> */}
       <Button onClick={handleSubmit}>Submit Flashcard</Button>
     </MainWrapper>
   );

@@ -27,3 +27,11 @@ export const Break = styled.div`
   align-self: center;
   justify-self: center;
 `;
+
+export const MainFlashcardWrapper = styled.div`
+  position: absolute;
+  left: 10;
+  top: 6.5rem;
+  right: 8.5rem;
+  bottom: 0;
+`;
