@@ -23,7 +23,9 @@ Productivia is a productivity-focused web application. It provides the necessary
   * Global State Management
   * Slices
   * Selectors
-* Authentication and data-storing using Firebase
+* Firebase
+ * Authentication to manage user creation
+ * Cloud Firestore to manage data storage and fetching
 * Routing
 
 ## Technologies
