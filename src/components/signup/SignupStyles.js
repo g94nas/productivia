@@ -12,6 +12,12 @@ export const MainWrapper = styled.div`
 export const Form = styled.form`
   width: 350px;
   height: 450px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: -10rem;
+    width: 200px;
+    height: 200px;
+  }
 `;
 
 export const MainText = styled.h1`
@@ -31,6 +37,10 @@ export const Input = styled.input`
   border: 2px solid #f5d432;
   outline: none;
   font-family: "Poppins";
+
+  @media screen and (max-width: 768px) {
+    width: 200px;
+  }
 `;
 
 export const Button = styled(Link)`
@@ -52,5 +62,9 @@ export const Button = styled(Link)`
 
   &:hover {
     width: 275px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 200px;
   }
 `;

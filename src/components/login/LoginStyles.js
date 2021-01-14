@@ -12,6 +12,12 @@ export const MainWrapper = styled.div`
 export const Form = styled.form`
   width: 350px;
   height: 350px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: -10rem;
+    width: 200px;
+    height: 200px;
+  }
 `;
 
 export const MainText = styled.h1`
@@ -31,6 +37,10 @@ export const Input = styled.input`
   border: 2px solid #f5d432;
   outline: none;
   font-family: "Poppins";
+
+  @media screen and (max-width: 768px) {
+    width: 200px;
+  }
 `;
 
 export const SubText = styled.p`
@@ -38,6 +48,10 @@ export const SubText = styled.p`
   text-align: center;
   font-size: 1rem;
   color: #000;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.75rem;
+  }
 `;
 
 export const Span = styled(Link)`
@@ -48,6 +62,10 @@ export const Span = styled(Link)`
 
   &:hover {
     border-bottom: 1px solid #bca42f;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.75rem;
   }
 `;
 
@@ -70,5 +88,9 @@ export const Button = styled(Link)`
   &:hover {
     width: 280px;
     transition: ease-in 0.5s;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 200px;
   }
 `;
