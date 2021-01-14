@@ -7,6 +7,12 @@ export const FlashcardWrapper = styled.div`
   align-items: center;
   padding: 3rem 8rem;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 0;
+    padding-top: 2rem;
+  }
 `;
 
 export const Title = styled.h1`
@@ -14,6 +20,14 @@ export const Title = styled.h1`
   font-size: 2rem;
   padding-top: 2rem;
   text-align: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 460px) {
+    font-size: 1rem;
+  }
 `;
 
 export const Break = styled.div`
@@ -26,6 +40,14 @@ export const Break = styled.div`
   background-color: #f5d432;
   align-self: center;
   justify-self: center;
+
+  @media screen and (max-width: 768px) {
+    width: 300px;
+  }
+
+  @media screen and (max-width: 460px) {
+    width: 200px;
+  }
 `;
 
 export const MainFlashcardWrapper = styled.div`

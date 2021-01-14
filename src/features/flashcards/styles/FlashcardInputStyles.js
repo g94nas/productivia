@@ -12,6 +12,14 @@ export const Title = styled.h1`
   font-weight: 400;
   font-size: 4rem;
   padding-top: 2rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media screen and (max-width: 460px) {
+    font-size: 2rem;
+  }
 `;
 
 export const Form = styled.form``;
@@ -24,6 +32,14 @@ export const Input = styled.input`
   outline: none;
   padding-left: 8px;
   font-family: "Poppins";
+
+  @media screen and (max-width: 768px) {
+    width: 400px;
+  }
+
+  @media screen and (max-width: 460px) {
+    width: 200px;
+  }
 `;
 
 export const Button = styled.button`
@@ -57,4 +73,12 @@ export const TextArea = styled.textarea`
   padding: 5px;
   background-position: bottom right;
   background-repeat: no-repeat;
+
+  @media screen and (max-width: 768px) {
+    width: 400px;
+  }
+
+  @media screen and (max-width: 460px) {
+    width: 200px;
+  }
 `;

@@ -22,6 +22,25 @@ export const ModalWrapper = styled.div`
   margin: auto;
   word-break: break-all;
   overflow: auto;
+
+  @media screen and (max-width: 1000px) {
+    width: 700px;
+    min-height: 400px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 440px;
+    min-height: 200px;
+  }
+
+  @media screen and (max-width: 460px) {
+    position absolute;
+    width: 250px;
+    min-height: 200px;
+    margin: auto;
+    top: 10rem;
+    right: 1.5rem;
+  }
 `;
 
 export const Front = styled.h1`
@@ -31,6 +50,10 @@ export const Front = styled.h1`
   margin: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 export const SuccessIcon = styled.h1`
@@ -46,6 +69,10 @@ export const SuccessIcon = styled.h1`
     color: green;
     transition: 0.3s;
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 export const ExitIcon = styled.h1`
@@ -59,6 +86,10 @@ export const ExitIcon = styled.h1`
   &:hover {
     font-size: 2.5rem;
     transition: 0.3s;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
   }
 `;
 
@@ -76,6 +107,11 @@ export const NextIconRight = styled.div`
     color: green;
     transition: 0.3s;
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+    padding-right: 1rem;
+  }
 `;
 
 export const NextIconLeft = styled.div`
@@ -91,5 +127,10 @@ export const NextIconLeft = styled.div`
   &:hover {
     color: green;
     transition: 0.3s;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+    padding-left: 1rem;
   }
 `;
