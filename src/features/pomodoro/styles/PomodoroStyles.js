@@ -13,6 +13,10 @@ export const Title = styled.h1`
   padding-top: 2rem;
   text-align: center;
   padding-bottom: 2rem;
+
+  @media screen and (max-width: 460px) {
+    font-size: 2rem;
+  }
 `;
 
 export const TimeWrapper = styled.div`
@@ -24,6 +28,10 @@ export const TimeWrapper = styled.div`
   width: 24rem;
   border: 3px solid #f5d432;
   outline: none;
+
+  @media screen and (max-width: 460px) {
+    width: 15rem;
+  }
 `;
 
 export const Time = styled.p`
@@ -32,6 +40,10 @@ export const Time = styled.p`
   vertical-align: center;
   font-size: 4rem;
   font-weight: bold;
+
+  @media screen and (max-width: 460px) {
+    font-size: 2rem;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -43,6 +55,10 @@ export const ButtonWrapper = styled.div`
   height: 3rem;
   padding-top: 2rem;
   margin-bottom: 2rem;
+
+  @media screen and (max-width: 460px) {
+    width: 15rem;
+  }
 `;
 
 export const Button = styled.button`
@@ -86,4 +102,8 @@ export const SmallWrapper = styled.div`
   align-content: center;
   width: 20rem;
   height: 3rem;
+
+  @media screen and (max-width: 460px) {
+    width: 15rem;
+  }
 `;
