@@ -7,19 +7,25 @@ Productivia is a productivity-focused web application. It provides the necessary
   * Remove Todo
   * Mark Todo as completed
   * Small tracker of completed and active todos
+  * Filter Todos by completion status
 * Flashcards
-  * Add, update and delete flashcards
+  * Add Flashcards
+  * Delete Flashcards
+  * Update Flashcards
+  * Mark Flashcard as completed
+  * Filter Flashcard by completion status
 * Pomodoro Clock
   * Choose session duration
   * Choose break duration
-  * Audio clue when session is over
 
 ## What I've Learned
 * Redux Toolkit Worfklow
   * Global State Management
   * Slices
   * Selectors
-* Authentication and data-storing using Firebase
+* Firebase
+ * Authentication to manage user creation
+ * Cloud Firestore to manage data storage and fetching
 * Routing
 
 ## Technologies
@@ -30,12 +36,6 @@ Productivia is a productivity-focused web application. It provides the necessary
 * React Router
 * Firebase
 * Styled Components
-
-### Folder Structure Overview
-* Features
-  * Contains all Redux-related Logic
-* Components
-  * Contains all components along with their style files
   
 ### List of Missing Features and/or Fixes to be Implemented
 I plan on adding all of these eventually:
@@ -45,7 +45,6 @@ I plan on adding all of these eventually:
 * Flashcards can't be filtered by group just yet
 * Flashcards experience a bug when touching the prev arrow immediately after the next one and the other way around
 * Add a timeblock feature to the todos
-* Highlight currently selected filter to the todos
 
-### Currently Working on:
-* Pushing todos and flashcards to firestore so that user don't lose them upon refreshing
+### Currently Working on
+* Making the site responsive
