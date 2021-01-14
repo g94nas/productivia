@@ -2,9 +2,6 @@ import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
 import { Link as LinkS } from "react-scroll";
 
-//#F5D432
-//#4A4A4A
-
 export const MainNavWrapper = styled.nav`
   display: flex;
   justify-content: center;
@@ -35,7 +32,7 @@ export const NavWrapper = styled.div`
   }
 `;
 
-export const NavLogo = styled(Link)`
+export const NavLogo = styled(LinkS)`
   display: flex;
   font-weight: bold;
   justify-content: flex-start;
@@ -58,8 +55,27 @@ export const NavLogo = styled(Link)`
   }
 `;
 
-export const SidebarIcon = styled.div`
-  display: none;
+export const NavLogoRouter = styled(Link)`
+  display: flex;
+  font-weight: bold;
+  justify-content: flex-start;
+  cursor: pointer;
+  font-size: 2rem;
+  text-decoration: none;
+  align-self: center;
+  color: #f5d432;
+  transition: 1s;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+    justify-self: flex-start;
+    padding-right: 1rem;
+  }
+
+  &:hover {
+    color: #000;
+    transition: 1s;
+  }
 `;
 
 export const MenuContainer = styled.ul`

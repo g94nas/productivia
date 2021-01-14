@@ -1,15 +1,5 @@
 import styled from "styled-components/macro";
 
-// export const BackgroundWrapper = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   padding-top: 5rem;
-//   overflow: auto;
-// `;
-
 export const ModalWrapper = styled.div`
   width: 1100px;
   min-height: 600px;

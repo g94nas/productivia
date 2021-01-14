@@ -2,8 +2,7 @@ import React from "react";
 import {
   MainNavWrapper,
   NavWrapper,
-  NavLogo,
-  SidebarIcon,
+  NavLogoRouter,
   Button,
   ButtonLink,
   ButtonContainer,
@@ -14,12 +13,9 @@ const Header = () => {
   return (
     <MainNavWrapper>
       <NavWrapper>
-        <NavLogo to="/" exact="true">
+        <NavLogoRouter to="/" exact="true">
           Productivia
-        </NavLogo>
-        <SidebarIcon>
-          <FaBars />
-        </SidebarIcon>
+        </NavLogoRouter>
         <ButtonContainer>
           <Button>
             <ButtonLink to="/signin">Log In</ButtonLink>

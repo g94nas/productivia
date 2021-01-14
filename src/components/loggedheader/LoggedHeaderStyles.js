@@ -61,6 +61,16 @@ export const NavLogo = styled(Link)`
 
 export const SidebarIcon = styled.div`
   display: none;
+
+  @media screen and (max-width: 960px) {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    align-self: center;
+    padding: 0;
+    cursor: pointer;
+  }
 `;
 
 export const MenuContainer = styled.ul`
@@ -68,10 +78,6 @@ export const MenuContainer = styled.ul`
   list-style: none;
   text-align: center;
   align-items: center;
-
-  @media screen and (max-width: 768px) {
-    none;
-  }
 `;
 
 export const MenuItem = styled.li`
@@ -108,6 +114,7 @@ export const ButtonContainer = styled.div`
   padding-left: 7.5rem;
 
   @media screen and (max-width: 960px) {
+    display: none;
     padding-left: 0;
   }
 `;

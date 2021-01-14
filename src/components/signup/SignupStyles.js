@@ -59,12 +59,18 @@ export const Button = styled(Link)`
   text-align: center;
   line-height: 1.9;
   cursor: pointer;
+  transition: 0.5s;
 
   &:hover {
     width: 275px;
+    transition: 0.5s;
   }
 
   @media screen and (max-width: 768px) {
     width: 200px;
+
+    &:hover {
+      width: 200px;
+    }
   }
 `;

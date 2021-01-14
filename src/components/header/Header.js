@@ -3,7 +3,6 @@ import {
   MainNavWrapper,
   NavWrapper,
   NavLogo,
-  SidebarIcon,
   MenuContainer,
   MenuItem,
   NavLink,
@@ -17,12 +16,9 @@ const Header = () => {
   return (
     <MainNavWrapper>
       <NavWrapper>
-        <NavLogo to="/" exact="true">
+        <NavLogo to="home" exact="true" offset={-80}>
           Productivia
         </NavLogo>
-        <SidebarIcon>
-          <FaBars />
-        </SidebarIcon>
         <MenuContainer>
           <MenuItem>
             <NavLink to="home" exact="true" offset={-80}>

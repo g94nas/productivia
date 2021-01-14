@@ -16,7 +16,7 @@ import {
 import { FaBars } from "react-icons/fa";
 import { auth } from "../../firebase";
 
-const LoggedHeader = () => {
+const LoggedHeader = ({ setIsOpen }) => {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
@@ -28,7 +28,7 @@ const LoggedHeader = () => {
     <MainNavWrapper>
       <NavWrapper>
         <NavLogo to="/todos">Productivia</NavLogo>
-        <SidebarIcon>
+        <SidebarIcon onClick={() => setIsOpen(true)}>
           <FaBars />
         </SidebarIcon>
         <MenuContainer>
