@@ -7,7 +7,7 @@ export const mainSection1 = {
   subtitle:
     "Keeping yourself productive is tough with everyday’s distractions. Productivia provides you with all the tools your need to keep yourself organized and accountable. Let’s achieve that next step forward together.",
   buttonText: "Start Now",
-  direction: true,
+  direction: "true",
   paddingTrue: true,
   img: image1,
   paddingPane: true,

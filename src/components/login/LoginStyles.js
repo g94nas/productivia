@@ -69,7 +69,7 @@ export const Span = styled(Link)`
   }
 `;
 
-export const Button = styled(Link)`
+export const Button = styled.button`
   text-decoration: none;
   text-align: center;
   line-height: 1.9;
@@ -85,6 +85,8 @@ export const Button = styled(Link)`
   margin-top: 2.5rem;
   cursor: pointer;
   transition: 0.5s;
+  font-family: "Poppins";
+  font-size: 1rem;
 
   &:hover {
     width: 280px;

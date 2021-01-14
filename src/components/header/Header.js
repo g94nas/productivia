@@ -10,7 +10,6 @@ import {
   ButtonLink,
   ButtonContainer,
 } from "./HeaderStyle";
-import { FaBars } from "react-icons/fa";
 
 const Header = () => {
   return (
