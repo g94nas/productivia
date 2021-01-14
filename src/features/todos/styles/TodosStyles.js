@@ -9,12 +9,11 @@ export const MainWrapper = styled.div`
   @media screen and (max-width: 768px) {
     width: 400px;
     height: 25px;
-    padding-bottom: 2rem;
+    height: fit-content;
   }
 
   @media screen and (max-width: 460px) {
     width: 200px;
-    padding-bottom: 3rem;
   }
 `;
 
@@ -31,6 +30,7 @@ export const SecondWrapper = styled.div`
   @media screen and (max-width: 768px) {
     justify-content: center;
     align-items: center;
+    height: fit-content;
   }
 
   @media screen and (max-width: 460px) {
@@ -47,6 +47,15 @@ export const TextArea = styled.textarea`
   padding: 5px;
   background-position: bottom right;
   background-repeat: no-repeat;
+
+  @media screen and (max-width: 768px) {
+    width: 400px;
+    height: 100%;
+  }
+
+  @media screen and (max-width: 460px) {
+    width: 200px;
+  }
 `;
 
 export const CheckedIcon = styled.div`
@@ -77,12 +86,10 @@ export const Task = styled.p`
   @media screen and (max-width: 768px) {
     width: 400px;
     height: 100%;
-    padding-bottom: 2rem;
   }
 
   @media screen and (max-width: 460px) {
     width: 200px;
-    padding-bottom: 3rem;
   }
 `;
 
