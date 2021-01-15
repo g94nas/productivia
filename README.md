@@ -1,4 +1,4 @@
-# Productivia (Work in Progress)
+# [Productivia](https://productivia.vercel.app/)
 Productivia is a productivity-focused web application. It provides the necessary tools to organize your day an optimize your learning in a clean, cluter-free environment.
 
 ## Features
@@ -37,14 +37,9 @@ Productivia is a productivity-focused web application. It provides the necessary
 * Firebase
 * Styled Components
   
-### List of Missing Features and/or Fixes to be Implemented
-I plan on adding all of these eventually:
-* Productivia is not responsive
-* Pomodoro lacks an audio clue
-* Pomodoro lacks a counter of completed pomodoro sessions
-* Flashcards can't be filtered by group just yet
-* Flashcards experience a bug when touching the prev arrow immediately after the next one and the other way around
-* Add a timeblock feature to the todos
+### List of Things I'm Planning to Add Eventually
+* Audio clue and stats to Pomodoro component
+* Allow users to filter flashcards by custom groups
+* Make todos draggable
+* More authentication logic, especially to the password, perhaps add firebase option to sign in via gmail.
 
-### Currently Working on
-* Making the site responsive
