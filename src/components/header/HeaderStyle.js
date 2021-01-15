@@ -13,8 +13,8 @@ export const MainNavWrapper = styled.nav`
   background-color: #fff;
 
   @media screen and (max-width: 768px) {
-    padding-right: 2rem;
-    padding-left: 2rem;
+    /* padding-right: 2rem;
+    padding-left: 2rem; */
   }
 `;
 
@@ -29,6 +29,7 @@ export const NavWrapper = styled.div`
 
   @media screen and (max-width: 768px) {
     width: fit-content;
+    padding: 0;
   }
 `;
 

@@ -13,7 +13,7 @@ export const MainWrapper = styled.div`
   }
 
   @media screen and (max-width: 460px) {
-    width: 200px;
+    width: 275px;
   }
 `;
 
@@ -54,7 +54,7 @@ export const TextArea = styled.textarea`
   }
 
   @media screen and (max-width: 460px) {
-    width: 200px;
+    width: 275px;
   }
 `;
 
@@ -71,7 +71,7 @@ export const CheckedIcon = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
 `;
 
@@ -89,7 +89,7 @@ export const Task = styled.p`
   }
 
   @media screen and (max-width: 460px) {
-    width: 200px;
+    width: 275px;
   }
 `;
 
@@ -106,7 +106,7 @@ export const RemoveIcon = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
 `;
 
@@ -124,6 +124,6 @@ export const EditIcon = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
 `;

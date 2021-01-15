@@ -23,6 +23,6 @@ export const TodosWrapper = styled.div`
   }
 
   @media screen and (max-width: 460px) {
-    width: 200px;
+    width: 290px;
   }
 `;

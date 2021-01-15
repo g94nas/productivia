@@ -14,6 +14,8 @@ export const MainWrapper = styled.div`
     align-items: center;
     height: 100%;
     padding: 0;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 `;
 
@@ -133,7 +135,7 @@ export const Button = styled(Link)`
   }
 
   &:hover {
-    width: 280px;
+    width: 250px;
     transition: 0.3s;
   }
 `;

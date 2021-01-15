@@ -1,6 +1,7 @@
 import styled from "styled-components/macro";
 
 export const ModalWrapper = styled.div`
+  position: relative;
   width: 1100px;
   min-height: 600px;
   background: #fff;
@@ -24,12 +25,12 @@ export const ModalWrapper = styled.div`
   }
 
   @media screen and (max-width: 460px) {
-    position absolute;
+    position: absolute;
     width: 250px;
-    min-height: 200px;
-    margin: auto;
-    top: 10rem;
-    right: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
   }
 `;
 
@@ -43,6 +44,27 @@ export const Front = styled.h1`
 
   @media screen and (max-width: 768px) {
     font-size: 1rem;
+  }
+`;
+
+export const ShowAnswerText = styled.h1`
+  position: absolute;
+  font-size: 1rem;
+  bottom: 1rem;
+  border: 3px #000 solid;
+  padding: 0.7rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.75rem;
+    padding: 0.5rem;
   }
 `;
 

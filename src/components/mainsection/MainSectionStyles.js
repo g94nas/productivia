@@ -13,13 +13,14 @@ export const MainSectionContainer = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: ${({ marginBottom }) => (marginBottom ? "1rem" : "3rem")};
+
   @media screen and (max-width: 768px) {
     flex-direction: column;
     padding: 0;
-    padding-right: 1rem;
-    padding-left: 1rem;
     justify-content: center;
     align-items: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 `;
 
@@ -32,6 +33,7 @@ export const MainSectionPane = styled.div`
     justify-content: center;
     align-items: center;
     margin: 0;
+    padding: 0;
   }
 `;
 export const MainSectionTitle = styled.h1`
@@ -112,6 +114,7 @@ export const MainSectionButton = styled(Link)`
     align-self: center;
     justify-self: center;
     text-align: center;
+    width: 250px;
   }
 
   &:hover {

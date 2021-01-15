@@ -7,6 +7,7 @@ import {
   NextIconRight,
   ExitIcon,
   SuccessIcon,
+  ShowAnswerText,
 } from "./styles/FlashcardsModalStyles";
 import { useSelector } from "react-redux";
 import {
@@ -35,6 +36,7 @@ const FlashcardsModal = ({ id, isOpen, setIsOpen, handleComplete }) => {
       setCurrentIdx(1);
       setCurrentFlashcard(allFlashcards[0].id);
     }
+    setShowAnswer(false);
   };
 
   const prevFlashcard = () => {
@@ -46,6 +48,7 @@ const FlashcardsModal = ({ id, isOpen, setIsOpen, handleComplete }) => {
       setCurrentIdx(1);
       setCurrentFlashcard(allFlashcards[allFlashcards.length - 1].id);
     }
+    setShowAnswer(false);
   };
 
   const handleClickSuccessIcon = () => {
@@ -78,9 +81,10 @@ const FlashcardsModal = ({ id, isOpen, setIsOpen, handleComplete }) => {
         <SuccessIcon onClick={handleClickSuccessIcon}>
           <IoIosCheckmarkCircleOutline />
         </SuccessIcon>
-        <Front onClick={() => setShowAnswer(!showAnswer)}>
-          {showAnswer ? flashcard.back : flashcard.front}
-        </Front>
+        <Front>{showAnswer ? flashcard.back : flashcard.front}</Front>
+        <ShowAnswerText onClick={() => setShowAnswer(!showAnswer)}>
+          Show Answer
+        </ShowAnswerText>
         <ExitIcon onClick={() => setIsOpen(!isOpen)}>
           <GrClose />
         </ExitIcon>

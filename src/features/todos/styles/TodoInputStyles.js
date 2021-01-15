@@ -36,6 +36,6 @@ export const Input = styled.input`
   }
 
   @media screen and (max-width: 460px) {
-    width: 200px;
+    width: 290px;
   }
 `;
