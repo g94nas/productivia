@@ -52,12 +52,17 @@ function App() {
             <Route path="/" component={Home} exact />
             <Route path="/signin" component={SignInPage} exact />
             <Route path="/signup" component={SignupPage} exact />
+            <Route path="/flashcards" component={Home} exact />
+            <Route path="/todos" component={Home} exact />
+            <Route path="/pomodoro" component={Home} exact />
           </Switch>
         </Router>
       ) : (
         <Router>
           <Switch>
             <Route path="/" component={TodoPage} exact />
+            <Route path="/signin" component={TodoPage} exact />
+            <Route path="/signup" component={TodoPage} exact />
             <Route path="/todos" component={TodoPage} exact />
             <Route path="/flashcards" component={FlashcardPage} exact />
             <Route path="/pomodoro" component={PomodoroPage} exact />
