@@ -41,9 +41,11 @@ export const Front = styled.h1`
   margin: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
+  padding-right: 0.7rem;
 
   @media screen and (max-width: 768px) {
     font-size: 1rem;
+    padding-right: 0.3rem;
   }
 `;
 
