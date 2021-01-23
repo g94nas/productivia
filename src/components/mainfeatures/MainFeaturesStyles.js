@@ -135,7 +135,7 @@ export const Button = styled(Link)`
   }
 
   &:hover {
-    width: 250px;
+    width: 270px;
     transition: 0.3s;
   }
 `;
